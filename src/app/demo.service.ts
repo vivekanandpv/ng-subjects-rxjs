@@ -18,6 +18,9 @@ export class DemoService {
   constructor() {
     setTimeout(() => {
       this.personSubject.next(10);
+      this.personSubject.next(11);
+      this.personSubject.error(new Error('Bad happened'));
+      this.personSubject.next(12);
       this.personSubject.complete();
     }, 5000);
   }
