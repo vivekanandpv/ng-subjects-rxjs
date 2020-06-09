@@ -24,15 +24,15 @@ export class PlaygroundComponent implements OnInit, OnDestroy {
     // second subscriber
     this.demoSubscription2 = this.demoService.person$.subscribe(
       (data) => console.log('Data 2', data),
-      (error) => console.error('Error 1', error),
-      () => console.log('Completed 1')
+      (error) => console.error('Error 2', error),
+      () => console.log('Completed 2')
     );
 
     //third
     this.demoSubscription3 = this.demoService.person$.subscribe(
       (data) => console.log('Data 3', data),
-      (error) => console.error('Error 1', error),
-      () => console.log('Completed 1')
+      (error) => console.error('Error 3', error),
+      () => console.log('Completed 3')
     );
   }
 

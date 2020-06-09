@@ -16,9 +16,9 @@ export class DemoService {
   person$ = this.personSubject.asObservable();
 
   constructor() {
-    setInterval(() => {
-      ++this.counter;
-      this.personSubject.next(this.counter);
-    }, 1000);
+    setTimeout(() => {
+      this.personSubject.next(10);
+      this.personSubject.complete();
+    }, 5000);
   }
 }
