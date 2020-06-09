@@ -10,12 +10,15 @@ export interface Person {
   providedIn: 'root',
 })
 export class DemoService {
-  private personSubject = new BehaviorSubject<Person>({
-    name: 'Default User',
-    id: 101,
-  });
+  counter = 0;
+  private personSubject = new BehaviorSubject<number>(this.counter);
 
   person$ = this.personSubject.asObservable();
 
-  constructor() {}
+  constructor() {
+    setInterval(() => {
+      ++this.counter;
+      this.personSubject.next(this.counter);
+    }, 1000);
+  }
 }
