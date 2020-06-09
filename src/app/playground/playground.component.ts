@@ -11,9 +11,23 @@ export class PlaygroundComponent implements OnInit {
 
   ngOnInit(): void {
     this.demoService.person$.subscribe(
-      (data) => console.log('Data', data),
-      (error) => console.error('Error', error),
-      () => console.log('Completed')
+      (data) => console.log('Data 1', data),
+      (error) => console.error('Error 1', error),
+      () => console.log('Completed 1')
+    );
+
+    // second subscriber
+    this.demoService.person$.subscribe(
+      (data) => console.log('Data 2', data),
+      (error) => console.error('Error 1', error),
+      () => console.log('Completed 1')
+    );
+
+    //third
+    this.demoService.person$.subscribe(
+      (data) => console.log('Data 3', data),
+      (error) => console.error('Error 1', error),
+      () => console.log('Completed 1')
     );
   }
 }
