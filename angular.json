@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "ng-subjects-rxjs"
+    }
+  },
+  "defaultProject": "ng-subjects-rxjs",
+  "cli": {
+    "analytics": "b2910945-e98f-438b-bc82-98edcc7f7292"
+  }
 }
