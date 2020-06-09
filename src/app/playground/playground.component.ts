@@ -10,7 +10,7 @@ export class PlaygroundComponent implements OnInit {
   constructor(private demoService: DemoService) {}
 
   ngOnInit(): void {
-    this.demoService.personSubject.subscribe(
+    this.demoService.person$.subscribe(
       (data) => console.log('Data', data),
       (error) => console.error('Error', error),
       () => console.log('Completed')

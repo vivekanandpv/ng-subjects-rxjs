@@ -10,10 +10,12 @@ export interface Person {
   providedIn: 'root',
 })
 export class DemoService {
-  personSubject = new BehaviorSubject<Person>({
+  private personSubject = new BehaviorSubject<Person>({
     name: 'Default User',
     id: 101,
   });
+
+  person$ = this.personSubject.asObservable();
 
   constructor() {}
 }
