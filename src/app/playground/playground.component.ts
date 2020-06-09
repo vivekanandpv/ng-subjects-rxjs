@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { DemoService } from '../demo.service';
 import { Subscription } from 'rxjs';
-import { map, take, tap } from 'rxjs/operators';
+import { map, take, tap, first } from 'rxjs/operators';
 
 @Component({
   selector: 'app-playground',
@@ -20,7 +20,8 @@ export class PlaygroundComponent implements OnInit, OnDestroy {
       .pipe(
         tap((v) => console.log('Inside Pipe : Before :', v)),
         map((v) => v * v),
-        tap((v) => console.log('Inside Pipe : After :', v))
+        tap((v) => console.log('Inside Pipe : After :', v)),
+        first((v) => v > 99)
       )
       .subscribe((data) => console.log('Final Subscriber', data));
   }
